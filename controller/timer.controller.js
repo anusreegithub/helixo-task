@@ -45,13 +45,22 @@ export const updateTimer = async (req, res) => {
   }
 };
 
-export const deleteTimer = async (req, res) => {
+export const deactivateTimer = async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedTimer = await Timer.findByIdAndDelete(id);
-    if (!deletedTimer)
+
+    const updatedTimer = await Timer.findByIdAndUpdate(
+      id,
+      { isActive: false },
+      { new: true }
+    );
+
+    if (!updatedTimer)
       return res.status(404).json({ error: "Timer not found" });
-    res.status(200).json({ message: "Timer deleted successfully" });
+
+    res
+      .status(200)
+      .json({ message: "Timer deactivated successfully", timer: updatedTimer });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -33,6 +33,8 @@ const TimerSchema = new mongoose.Schema(
         default: "Color pulse",
       },
     },
+
+    isActive: { type: Boolean, default: true },
   },
   {
     timestamps: true,

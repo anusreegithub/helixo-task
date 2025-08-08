@@ -1,7 +1,7 @@
 import express from "express";
 import {
   createTimer,
-  deleteTimer,
+  deactivateTimer,
   getTimerById,
   getTimersByStoreId,
   updateTimer,
@@ -13,6 +13,6 @@ router.post("/", createTimer);
 router.get("/store/:storeId", getTimersByStoreId);
 router.get("/:id", getTimerById);
 router.put("/:id", updateTimer);
-router.delete("/:id", deleteTimer);
+router.patch("/:id/deactivate", deactivateTimer);
 
 export default router;
