@@ -3,16 +3,16 @@ import {
   createTimer,
   deactivateTimer,
   getTimerById,
-  getTimersByStoreId,
+  getTimersByStore,
   updateTimer,
 } from "../controller/timer.controller.js";
 
-const router = express.Router();
+const timerRouter = express.Router();
 
-router.post("/", createTimer);
-router.get("/store/:storeId", getTimersByStoreId);
-router.get("/:id", getTimerById);
-router.put("/:id", updateTimer);
-router.patch("/:id/deactivate", deactivateTimer);
+timerRouter.post("/", createTimer);
+timerRouter.get("/store", getTimersByStore);
+timerRouter.get("/:id", getTimerById);
+timerRouter.put("/:id", updateTimer);
+timerRouter.patch("/:id/deactivate", deactivateTimer);
 
-export default router;
+export default timerRouter;

@@ -11,6 +11,8 @@
   "author": "ANUSREE PANKAN",
   "license": "ISC",
   "dependencies": {
+    "@shopify/shopify-api": "^11.14.1",
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",

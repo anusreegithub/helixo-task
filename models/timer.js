@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const TimerSchema = new mongoose.Schema(
   {
-    storeId: { type: String, required: true }, // Unique store identifier (Shopify domain or ID)
-    productId: { type: String, required: true }, // Target product for the timer
+    storeId: { type: String, required: true },
+    productId: { type: String, required: true },
 
-    name: { type: String, required: true }, // Timer name shown in admin panel
-    description: { type: String }, // Promotional message or details
+    name: { type: String },
+    description: { type: String },
 
     startTime: { type: Date, required: true },
     endTime: { type: Date, required: true },

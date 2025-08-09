@@ -2,7 +2,23 @@ import Timer from "../models/timer.js";
 
 export const createTimer = async (req, res) => {
   try {
-    const timer = new timer(req.body);
+    const storeId = process.env.SHOPIFY_SHOP;
+
+    const timer = new Timer({
+      storeId,
+      productId: req.body.productId,
+      name: req.body.name,
+      description: req.body.description,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime,
+      style: {
+        size: req.body.size,
+        position: req.body.position,
+        color: req.body.color || "#000000",
+      },
+      urgencyTrigger: req.body.urgencyTrigger,
+    });
+
     await timer.save();
     res.status(201).json(timer);
   } catch (error) {
@@ -10,10 +26,10 @@ export const createTimer = async (req, res) => {
   }
 };
 
-export const getTimersByStoreId = async (req, res) => {
+export const getTimersByStore = async (req, res) => {
   try {
-    const { storeId } = req.params;
-    const timers = await Timer.find({ storeId });
+
+    const timers = await Timer.find();
     res.status(200).json(timers);
   } catch (error) {
     res.status(500).json({ error: error.message });
