@@ -11,7 +11,7 @@ const timerRouter = express.Router();
 
 timerRouter.post("/", createTimer);
 timerRouter.get("/store", getTimersByStore);
-timerRouter.get("/:id", getTimerById);
+timerRouter.get("/:productId", getTimerById);
 timerRouter.put("/:id", updateTimer);
 timerRouter.patch("/:id/deactivate", deactivateTimer);
 
