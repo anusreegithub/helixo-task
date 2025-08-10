@@ -4,7 +4,7 @@ import {
   deactivateTimer,
   getTimerById,
   getTimersByStore,
-  updateTimer,
+  getTimer,
 } from "../controller/timer.controller.js";
 
 const timerRouter = express.Router();
@@ -12,7 +12,7 @@ const timerRouter = express.Router();
 timerRouter.post("/", createTimer);
 timerRouter.get("/:storeDomain/:productId", getTimersByStore);
 timerRouter.get("/:numericId", getTimerById);
-timerRouter.put("/:id", updateTimer);
+timerRouter.get("/", getTimer);
 timerRouter.patch("/:id/deactivate", deactivateTimer);
 
 export default timerRouter;
