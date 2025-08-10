@@ -53,7 +53,7 @@ POST	/timer Create a new countdown timer
 GET	/timer/store	Get all countdown timer
 GET	/timer/:storeDomain/:productId	Get timer by productId
 PATCH	/timer/:id/deactivate	Deactivate Timer
-```
 
 GET /products  Get all products
+```
 
