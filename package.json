@@ -5,7 +5,7 @@
   "description": "Count down task",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "ANUSREE PANKAN",
