@@ -17,29 +17,6 @@ Support for urgency notifications when timer is near expiry (e.g., last 5 minute
 
 Integration with Shopify ScriptTag API or Theme App Extension for injecting frontend widget
 
-backend/
-
-│── config/                  # Configuration files (Shopify OAuth, DB, environment)
-│   ├── dbConnect.js           # MongoDB connection setup
-│
-│── controllers/              # API route handlers (timers, auth)
-│   ├── product.controller.js    # View products
-│   ├── timer.controller.js  # CRUD for countdown timers
-│
-│── models/                   # MongoDB schemas/models for stores & timers
-│   ├── timer.js              # Countdown timer schema
-│
-│── routes/                   # API route definitions
-│   ├── product.routes.js        #  products routes
-│   ├── timers.routes.js      # Countdown timer routes
-
-│── utils/                    # Helper functions
-│   ├── shopifyService.js     # Shopify OAuth 
-│
-│── index.js                 # HTTP server start point
-│── package.json              # Node dependencies
-│── README.md                 # Project documentation
-│── .env.example              # Environment variable sample
 
 
 ⚙️ Installation & Setup
