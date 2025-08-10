@@ -12,9 +12,9 @@ export const createTimer = async (req, res) => {
       startTime: req.body.startTime,
       endTime: req.body.endTime,
       style: {
-        size: req.body.size,
-        position: req.body.position,
-        color: req.body.color || "#000000",
+        size: req.body.style.size,
+        position: req.body.style.position,
+        color: req.body.style.color || "#000000",
       },
       urgencyTrigger: req.body.urgencyTrigger,
     });
