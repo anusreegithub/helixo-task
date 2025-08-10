@@ -10,7 +10,7 @@ import {
 const timerRouter = express.Router();
 
 timerRouter.post("/", createTimer);
-timerRouter.get("/store", getTimersByStore);
+timerRouter.get("/:storeDomain/:productId", getTimersByStore);
 timerRouter.get("/:numericId", getTimerById);
 timerRouter.put("/:id", updateTimer);
 timerRouter.patch("/:id/deactivate", deactivateTimer);

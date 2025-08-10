@@ -28,10 +28,19 @@ export const createTimer = async (req, res) => {
 
 export const getTimersByStore = async (req, res) => {
   try {
-    const timers = await Timer.find();
-    res.status(200).json(timers);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+    const { storeDomain, productId } = req.params;
+    const timer = await Timer.findOne({
+      storeId: storeDomain,
+      productId: { $regex: productId + "$" },
+    });
+
+    if (!timer) {
+      return res.status(404).json({ error: "Timer not found" });
+    }
+
+    res.json(timer);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 };
 
